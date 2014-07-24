@@ -1,7 +1,6 @@
 # thanks to Jonathon Wolfe at http://reed.github.io/turbolinks-compatibility/google_analytics.html
 
 class @GoogleAnalytics
-
   @load: ->
     # Google Analytics depends on a global _gaq array. window is the global scope.
     window._gaq = []

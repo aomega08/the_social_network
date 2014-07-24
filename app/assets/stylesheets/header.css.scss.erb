@@ -1,0 +1,80 @@
+#site-header {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAqCAMAAABFoMFOAAAAWlBMVEU7WZg8WZg8Wpg8Wpk9Wpk9W5k+W5k+XJo/XJpAXZpAXZtBXptCX5xDYJxEYZ1FYZ1GYp5HY55IZJ9JZZ9JZaBKZqBLZqBLZ6FMZ6FMaKFNaKFNaKJNaaJOaaKGKTtqAAAAGUlEQVR42mORZWFg+Q+HDFhoZIzOw6SBEACoqB2pPL/a+AAAAABJRU5ErkJggg==);
+	background-color: rgb(59, 89, 152);
+	background-repeat: repeat-x;
+	border-bottom: 1px solid #133783;
+	height: 83px;
+	padding-top: 13px;
+
+	.navbar-brand {
+		margin-top: 17px;
+		padding: 0;
+
+		img {
+			max-height: 36px;
+		}
+	}
+
+	.login-form {
+		line-height: 14px;
+
+		label {
+			font-weight: normal;
+			color: white;
+			font-size: 11px;
+			margin-bottom: 4px;
+		}
+
+		a {
+			color: rgb(152, 169, 202);
+			font-size: 11px;
+			margin-top: 4px;
+			display: inline-block;
+		}
+	}
+
+	.login-field {
+		width: 150px;
+		margin-left: 14px;
+	}
+
+	.submit-field {
+		margin: 20px 0 0 15px;
+		width: 63px;
+	}
+
+	.checkbox {
+		margin-top: 4px;
+
+		label {
+			color: rgb(152, 169, 202);
+		}
+
+		input {
+			margin-top: 1px;
+		}
+	}
+
+	input[type=text], input[type=password] {
+		width: 150px;
+		padding: 3px 3px 4px;
+		border: 1px solid rgb(29, 42, 91);
+		font-size: 11px;
+		height: 22px;
+	}
+
+	input[type=submit] {
+		background-image: url(<%= asset_path('button-back.png') %>);
+		background-color: #5b74a8;
+		border: 1px solid;
+		border-color: #29447e #29447e #1a356e;
+		box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+		color: white;
+		cursor: pointer;
+		font-size: 11px;
+		font-weight: bold;
+		line-height: 13px;
+		padding: 3px 6px 4px;
+		text-align: center;
+	}
+}
