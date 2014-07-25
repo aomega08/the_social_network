@@ -12,6 +12,7 @@ gem 'bootstrap-sass'
 gem 'haml-rails'
 gem 'high_voltage'
 gem 'thin'
+gem 'foreigner'
 
 group :development do
   gem 'sqlite3'
