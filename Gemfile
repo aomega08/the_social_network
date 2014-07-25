@@ -14,6 +14,8 @@ gem 'high_voltage'
 gem 'thin'
 gem 'foreigner'
 
+gem 'bcrypt-ruby'
+
 group :development do
   gem 'sqlite3'
   gem 'better_errors'

@@ -1,0 +1,22 @@
+#site-footer {
+  border-top: 1px solid #ccc;
+  margin: 8px auto 20px;
+  padding-top: 8px;
+  width: 980px;
+}
+
+.footer-links {
+  a {
+    color: #3b5998;
+    font-size: 11px;
+    line-height: 20px;
+  }
+
+  td {
+    padding: 0 10px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+}

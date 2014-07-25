@@ -9,18 +9,19 @@
       = link_to root_path, class: 'navbar-brand', title: 'Go to The Social , Network home', tabindex: 1 do
         = image_tag 'logo.png', alt: 'The Social Network Logo'
     .collapse.navbar-collapse
-      .pull-right
-        = form_tag login_url, class: 'login-form' do
-          .pull-left.login-field
-            = label_tag :email, "Email or Phone"
-            = text_field_tag :email, '', tabindex: 2
-            .checkbox
-              = label_tag :remember do
-                = check_box_tag :remember, 0, false, tabindex: 4
-                Keep me logged in
-          .pull-left.login-field
-            = label_tag :password
-            = password_field_tag :password, '', tabindex: 3
-            = link_to 'Forgot your password?', '#', tabindex: 6
-          .pull-left.submit-field
-            = submit_tag "Log In", tabindex: 5
+      - if controller_name != 'sessions'
+        .pull-right
+          = form_tag login_url, class: 'login-form' do
+            .pull-left.login-field
+              = label_tag :email, "Email or Phone"
+              = text_field_tag :email, '', tabindex: 2
+              .checkbox
+                = label_tag :remember do
+                  = check_box_tag :remember, 0, false, tabindex: 4
+                  Keep me logged in
+            .pull-left.login-field
+              = label_tag :password
+              = password_field_tag :password, '', tabindex: 3
+              = link_to 'Forgot your password?', '#', tabindex: 6
+            .pull-left.submit-field
+              = submit_tag "Log In", tabindex: 5

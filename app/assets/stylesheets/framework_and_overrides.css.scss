@@ -9,6 +9,10 @@ img {
 	margin: 0 auto;
 }
 
+a:active {
+  outline: none;
+}
+
 #site-header .container {
 	max-width: 1010px;
 	min-width: 1010px;

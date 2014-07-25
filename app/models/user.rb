@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   validates_presence_of :name
 
   def self.find_by_email(email)
-    UserEmail.find_by(email: email).user
+    UserEmail.find_by(email: email).try(:user)
   end
 
   validate do

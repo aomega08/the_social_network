@@ -1,0 +1,118 @@
+.login-page-box {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 15px 20px;
+
+  width: 640px;
+  margin: 65px auto 0;
+
+  .alert {
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-size: 12px;
+  }
+
+  h2 {
+    color: #1c2a47;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    padding: 6px 0 8px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+
+  .login-box-inner {
+    padding: 15px 0 10px 0;
+    width: 380px;
+    margin: 0 auto;
+  }
+
+  .login-field {
+    padding-bottom: 8px;
+
+    label {
+      display: block;
+      float: left;
+      width: 100px;
+      font-size: 11px;
+      color: #666;
+      padding: 3px 0;
+    }
+
+    input {
+      height: 22px;
+      width: 175px;
+      padding: 3px 3px 4px;
+      font-size: 11px;
+      border: 1px solid #bdc7d8;
+    }
+  }
+
+  .submit-field {
+    padding: 8px 0 3px 100px;
+    font-size: 11px;
+
+    a {
+      font-weight: bold;
+      color: #3b5998;
+    }
+  }
+
+  .checkbox {
+    padding: 0px 0 3px 100px;
+    margin: 0;
+
+    label {
+      width: auto;
+      color: #333;
+      font-size: 11px;
+    }
+
+    input {
+      margin-top: 2px;
+    }
+  }
+
+  input[type=submit] {
+    background-image: url(<%= asset_path('button-back.png') %>);
+    background-color: #5b74a8;
+    border: 1px solid;
+    border-color: #29447e #29447e #1a356e;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 16px;
+    padding: 3px 6px 4px;
+    text-align: center;
+    margin-right: 4px;
+  }
+
+  .forgot-password-link {
+    display: block;
+    padding: 3px 0 3px 100px;
+    color: #3b5998;
+    font-size: 11px;
+    margin-top: 9px;
+  }
+}
+
+.login-page-languages {
+  width: 640px;
+  margin: 0 auto 40px;
+  padding-top: 10px;
+  line-height: 1;
+
+  a {
+    font-size: 11px;
+    color: #3b5998;
+    padding-left: 10px;
+    float: left;
+
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+}
