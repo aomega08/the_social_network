@@ -7,11 +7,10 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    %header#site-header
-      - if current_user
-        = render 'layouts/user_header'
-      - else
-        = render 'layouts/anonymous_header'
+    - if current_user
+      = render 'layouts/user_header'
+    - else
+      = render 'layouts/anonymous_header'
     %main{:role => "main"}
       = yield
 

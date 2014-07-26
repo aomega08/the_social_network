@@ -2,6 +2,7 @@
 
 body {
 	font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
+  background-color: #e9eaed;
 }
 
 img {
@@ -21,4 +22,8 @@ a:active {
 .navbar-default {
 	background: transparent;
 	border: none;
+}
+
+.container {
+  max-width: 1010px;
 }

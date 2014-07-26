@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
 
   get 'home', to: 'site#home'
+  get 'search', to: 'site#search'
 end
