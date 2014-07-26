@@ -13,15 +13,15 @@
         .pull-right
           = form_tag login_url, class: 'login-form' do
             .pull-left.login-field
-              = label_tag :email, "Email or Phone"
-              = text_field_tag :email, '', tabindex: 2
+              = label_tag :email, "Email or Phone", class: 'sr-only'
+              = text_field_tag :email, '', placeholder: 'Email or Phone', tabindex: 2
               .checkbox
                 = label_tag :remember do
-                  = check_box_tag :remember, 0, false, tabindex: 4
+                  = check_box_tag :remember, 1, false, tabindex: 4
                   Keep me logged in
             .pull-left.login-field
-              = label_tag :password
-              = password_field_tag :password, '', tabindex: 3
+              = label_tag :password, "Password", class: 'sr-only'
+              = password_field_tag :password, '', placeholder: 'Password', tabindex: 3
               = link_to 'Forgot your password?', '#', tabindex: 6
             .pull-left.submit-field
               = submit_tag "Log In", tabindex: 5

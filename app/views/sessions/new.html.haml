@@ -7,17 +7,17 @@
 
     .login-box-inner
       = form_tag login_url, class: 'login-form' do
-        .login-field
+        .login-field.clearfix
           = label_tag :email, "Email or Phone:"
           = text_field_tag :email, '', tabindex: 1
-        .login-field
+        .login-field.clearfix
           = label_tag :password, "Password:"
           = password_field_tag :password, '', tabindex: 2
-        .checkbox
+        .checkbox.clearfix
           = label_tag :remember do
             = check_box_tag :remember, 0, false, tabindex: 3
             Keep me logged in
-        .submit-field
+        .submit-field.clearfix
           = submit_tag "Log In", tabindex: 4
           or
           = link_to 'Sign up for The Social Network', '#', tabindex: 5
