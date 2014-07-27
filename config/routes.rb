@@ -7,4 +7,8 @@ Rails.application.routes.draw do
 
   get 'home', to: 'site#home'
   get 'search', to: 'site#search'
+
+  get 'profile(/:id)', to: 'users#show', as: :profile
+
+  get ':object_id', to: 'site#object'
 end

@@ -18,3 +18,47 @@
     color: #a94442;
   }
 }
+
+.has-dropdown {
+  position: relative;
+
+  .dropdown-menu {
+    list-style-type: none;
+    position: absolute;
+    left: -1px;
+    display: none;
+
+    padding: 6px 0;
+    background-color: white;
+    border: 1px solid #d3d6db;
+
+    & > li {
+      line-height: 23px;
+      font-size: 11px;
+      white-space: nowrap;
+
+      &:hover {
+        background-color: rgb(246, 247, 248);
+      }
+
+      &.separator {
+        margin: 5px 7px 6px;
+        padding-top: 1px;
+        border-bottom: 1px solid rgb(221, 221, 221);
+      }
+    }
+
+    a {
+      display: block;
+      padding: 0 17px;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &:hover .dropdown-menu {
+    display: block;
+  }
+}

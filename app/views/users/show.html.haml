@@ -1,0 +1,54 @@
+.container
+  #profile-main
+    #profile-intro
+      #profile-cover
+        #cover-border
+        = image_tag @user.cover_image, alt: 'Cover Photo'
+        %h2
+          = link_to @user.full_name, profile_url(@user)
+
+      #profile-headline
+        #profile-image
+          = image_tag @user.profile_image, alt: @user.full_name
+        #profile-links-container
+          %ul#profile-links.clearfix
+            %li.current
+              = link_to 'Timeline', profile_path(@user)
+              %i.fa.fa-caret-up
+            %li
+              = link_to 'About', '#'
+            %li
+              = link_to 'Photos', '#'
+            %li
+              = link_to 'Friends', '#'
+            %li.has-dropdown
+              = link_to '#' do
+                More
+                %i.fa.fa-caret-down
+
+              %ul.dropdown-menu
+                %li
+                  = link_to 'Places', '#'
+                %li
+                  = link_to 'Music', '#'
+                %li
+                  = link_to 'Movies', '#'
+                %li
+                  = link_to 'TV Shows', '#'
+                %li
+                  = link_to 'Books', '#'
+                %li
+                  = link_to 'Likes', '#'
+                %li
+                  = link_to 'Events', '#'
+                %li
+                  = link_to 'Groups', '#'
+                %li
+                  = link_to 'Sports', '#'
+                %li
+                  = link_to 'Reviews', '#'
+                %li
+                  = link_to 'Notes', '#'
+                %li.separator
+                %li
+                  = link_to 'Manage Sections', '#'
