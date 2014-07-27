@@ -1,43 +1,37 @@
 %header#site-header.logged-in
-  %nav.navbar.navbar-default
-    .container
-      .navbar-header
-        %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
-          %span.sr-only Toggle navigation
-          %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
-        = link_to root_path, class: 'navbar-brand', tabindex: 1 do
-          = image_tag 'logo_squared.png', alt: 'The Social Network'
-      .collapse.navbar-collapse.clearfix
-        %ul.header-utilities
-          %li
-            = link_to current_user.name, '#'
-          %li
-            = link_to 'Home', home_url
-          %li.header-menus
-            %i.fa.fa-users
-            %i.fa.fa-envelope
-            %i.fa.fa-globe
-          %li
-            %i.fa.fa-lock
-          %li.open-header-menu
-            %i.fa.fa-caret-down.open-header-menu-icon
+  .container
+    %h1.navbar-header
+      = link_to root_path, tabindex: 1 do
+        = image_tag 'logo_squared.png', alt: 'The Social Network'
+    %nav
+      %ul.header-utilities
+        %li.header-hovering
+          = link_to current_user.name, '#'
+        %li.header-hovering
+          = link_to 'Home', home_url
+        %li.header-menus
+          %i.fa.fa-users
+          %i.octicon.octicon-comment-discussion
+          %i.octicon.octicon-globe
+        %li
+          %i.fa.fa-lock
+        %li.open-header-menu.open-click-menu
+          %i.fa.fa-caret-down.open-header-menu-icon
 
-            %ul#header-arrow-menu
-              %li.header-menu-arrow
-                %i.fa.fa-caret-up
-              %li.menuitem
-                Hello!
-              %li.menuitem
-                = button_to logout_url, method: :delete, tabindex: 4 do
-                  Log Out
+          %ul#header-arrow-menu.click-menu
+            %li.header-menu-arrow
+              %i.fa.fa-caret-up
+            %li.menuitem
+              Hello!
+            %li.menuitem
+              = button_to logout_url, method: :delete, tabindex: 4 do
+                Log Out
 
-        .search-container
-          = form_tag search_url do
-            .search-box-faker
-              %button.search-box-submit(type="submit" tabindex="3")
-                %i.fa.fa-search
-              = text_field_tag :query, '', placeholder: 'Search for people, places and things', tabindex: 2
+      .search-container
+        = form_tag search_url do
+          .search-box-faker
+            %button.search-box-submit(type="submit" tabindex="3")
+              %i.fa.fa-search
+            = text_field_tag :query, '', placeholder: 'Search for people, places and things', tabindex: 2, class: 'boxed'
 
 .header-padding

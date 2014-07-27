@@ -13,10 +13,9 @@
         .login-field.clearfix
           = label_tag :password, "Password:"
           = password_field_tag :password, '', tabindex: 2
-        .checkbox.clearfix
-          = label_tag :remember do
-            = check_box_tag :remember, 0, false, tabindex: 3
-            Keep me logged in
+        = label_tag :remember, class: 'checkbox' do
+          = check_box_tag :remember, 0, false, tabindex: 3
+          Keep me logged in
         .submit-field.clearfix
           = submit_tag "Log In", tabindex: 4
           or

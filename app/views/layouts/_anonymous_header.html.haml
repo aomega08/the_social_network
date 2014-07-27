@@ -1,14 +1,9 @@
 %header#site-header
-  %nav.navbar.navbar-default
-    .container
-      .navbar-header
-        %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
-          %span.sr-only Toggle navigation
-          %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
-        = link_to root_path, class: 'navbar-brand', title: 'Go to The Social , Network home', tabindex: 1 do
-          = image_tag 'logo.png', alt: 'The Social Network Logo'
+  .container
+    %h1.navbar-header
+      = link_to root_path, class: 'navbar-brand', title: 'Go to The Social , Network home', tabindex: 1 do
+        = image_tag 'logo.png', alt: 'The Social Network Logo'
+    %nav
       .collapse.navbar-collapse
         - if controller_name != 'sessions'
           .pull-right
@@ -16,10 +11,9 @@
               .pull-left.login-field
                 = label_tag :email, "Email or Phone", class: 'sr-only'
                 = text_field_tag :email, '', placeholder: 'Email or Phone', tabindex: 2
-                .checkbox
-                  = label_tag :remember do
-                    = check_box_tag :remember, 1, false, tabindex: 4
-                    Keep me logged in
+                = label_tag :remember, class: 'checkbox' do
+                  = check_box_tag :remember, 1, false, tabindex: 4
+                  Keep me logged in
               .pull-left.login-field
                 = label_tag :password, "Password", class: 'sr-only'
                 = password_field_tag :password, '', placeholder: 'Password', tabindex: 3

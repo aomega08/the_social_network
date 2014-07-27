@@ -1,15 +1,22 @@
 $ ->
   $(document).on 'click', (event) ->
-    unless $(event.target).closest('#header-arrow-menu').length
-      if $('#header-arrow-menu').is(":visible")
-        $('.open-header-menu-icon').removeClass('menu-open')
-        $('#header-arrow-menu').hide()
+    unless $(event.target).closest('.click-menu').length
+      toggle = $(this)
+      menu = toggle.find(".click-menu")
 
-  $('.open-header-menu').on 'click', (event) ->
-    if $('#header-arrow-menu').is(":visible")
-      $('.open-header-menu-icon').removeClass('menu-open')
-      $('#header-arrow-menu').hide()
+      if menu.is(":visible")
+        toggle.removeClass('menu-open')
+        menu.hide()
+
+  $('.open-click-menu').on 'click', (event) ->
+    toggle = $(this)
+    menu = toggle.find(".click-menu")
+
+    if menu.is(":visible")
+      toggle.removeClass('menu-open')
+      menu.hide()
     else
-      $('.open-header-menu-icon').addClass('menu-open')
-      $('#header-arrow-menu').show()
+      toggle.addClass('menu-open')
+      menu.show()
+
     event.stopPropagation()

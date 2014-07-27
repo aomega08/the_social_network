@@ -1,0 +1,64 @@
+@import '../defines.css.scss';
+
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:active {
+  outline: none;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  color: #333;
+  font-family: $fontStack;
+  background-color: $mainBackground;
+  font-size: 100%;
+  line-height: 1.42857143;
+}
+
+a {
+  color: $brandColor;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+.container {
+  width: 981px;
+  margin: 0 auto;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.clearfix {
+  *zoom: 1;
+
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}

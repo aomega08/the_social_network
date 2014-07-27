@@ -1,3 +1,14 @@
+@import 'defines.css.scss';
+
+.navbar-header {
+	margin: 0;
+	float: left;
+
+	a, img {
+		display: block;
+	}
+}
+
 #site-header {
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAqCAMAAABFoMFOAAAAWlBMVEU7WZg8WZg8Wpg8Wpk9Wpk9W5k+W5k+XJo/XJpAXZpAXZtBXptCX5xDYJxEYZ1FYZ1GYp5HY55IZJ9JZZ9JZaBKZqBLZqBLZ6FMZ6FMaKFNaKFNaKJNaaJOaaKGKTtqAAAAGUlEQVR42mORZWFg+Q+HDFhoZIzOw6SBEACoqB2pPL/a+AAAAABJRU5ErkJggg==);
 	background-color: rgb(59, 89, 152);
@@ -66,7 +77,7 @@
 	}
 
 	input[type=submit] {
-		background-image: url(<%= asset_path('button-back.png') %>);
+		background-image: asset-url('button-back.png');
 		background-color: #5b74a8;
 		border: 1px solid;
 		border-color: #29447e #29447e #1a356e;
@@ -83,14 +94,14 @@
 }
 
 #site-header.logged-in {
-	height: 43px;
+	height: 47px;
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
 	border-bottom: 1px solid #133783;
 	box-shadow: rgba(black, 0.521569) 0px 2px 2px -2px;
-	padding-top: 10px;
+	padding-top: 12px;
 
 	.navbar-brand {
 		margin-top: 0px;
@@ -98,12 +109,12 @@
 	}
 
 	.search-box-faker {
+		margin-left: 29px;
 		height: 24px;
 		border: 1px solid #ccc;
 		border-radius: 4px;
-		padding: 1px 7px;
+		padding: 0 7px;
 		background: white;
-		margin-left: 5px;
 		position: relative;
 		overflow: hidden;
 
@@ -128,21 +139,6 @@
 			&:focus {
 				outline: none;
 			}
-		}
-	}
-
-	.header-utilities {
-		float: right;
-		margin-left: 15px;
-
-		list-style-type: none;
-		padding: 0;
-		height: 22px;
-
-		li {
-			margin: 0;
-			display: block;
-			float: left;
 		}
 	}
 }
@@ -211,6 +207,9 @@
 			border: none;
 			padding: 0;
 			font-size: 12px;
+			width: 100%;
+			outline: none;
+			text-align: left;
 		}
 	}
 
@@ -219,8 +218,26 @@
 }
 
 .header-utilities {
+	float: right;
+	list-style-type: none;
+	margin: 0 0 0 15px;
+	padding: 0;
+	line-height: 22px;
+
+	li {
+		display: block;
+		float: left;
+		margin: 0;
+		padding: 0 7px;
+		position: relative;
+	}
+
+	.header-hovering:hover {
+		background: rgba(black, .1);
+	}
+
 	a {
-		font-family: 'Helvetica Neue', Helvetica, Arial, 'lucida grande', tahoma, verdana, arial, sans-serif;
+		font-family: $helveticaStack;
 		color: white;
 		font-weight: bold;
 		font-size: 12px;
@@ -238,8 +255,13 @@
 
 	i {
 		color: #2f477a;
-		font-size: 18px;
+		font-size: 20px;
 		line-height: 27px;
+		margin-top: -2px;
+
+		&.octicon {
+			font-size: 24px;
+		}
 
 		&:hover {
 			color: #23355b;
@@ -248,11 +270,5 @@
 		&.menu-open {
 			color: white;
 		}
-	}
-
-	li {
-		padding: 0 7px;
-		line-height: 24px;
-		position: relative;
 	}
 }

@@ -25,7 +25,7 @@
 
   .login-box-inner {
     padding: 15px 0 10px 0;
-    width: 380px;
+    width: 390px;
     margin: 0 auto;
   }
 
@@ -35,23 +35,19 @@
     label {
       display: block;
       float: left;
-      width: 100px;
+      width: 110px;
       font-size: 11px;
       color: #666;
       padding: 3px 0;
     }
 
     input {
-      height: 22px;
       width: 175px;
-      padding: 3px 3px 4px;
-      font-size: 11px;
-      border: 1px solid #bdc7d8;
     }
   }
 
   .submit-field {
-    padding: 8px 0 3px 100px;
+    padding: 8px 0 3px 110px;
     font-size: 11px;
 
     a {
@@ -60,23 +56,17 @@
     }
   }
 
-  .checkbox {
-    padding: 0px 0 3px 100px;
+  label.checkbox {
+    width: auto;
+    color: #333;
+    font-size: 11px;
+
+    padding: 0px 0 3px 125px;
     margin: 0;
-
-    label {
-      width: auto;
-      color: #333;
-      font-size: 11px;
-    }
-
-    input {
-      margin-top: 2px;
-    }
   }
 
   input[type=submit] {
-    background-image: url(<%= asset_path('button-back.png') %>);
+    background-image: asset-url('button-back.png');
     background-color: #5b74a8;
     border: 1px solid;
     border-color: #29447e #29447e #1a356e;
@@ -92,11 +82,12 @@
   }
 
   .forgot-password-link {
-    display: block;
-    padding: 3px 0 3px 100px;
+    display: inline-block;
+    padding: 3px 0;
     color: #3b5998;
     font-size: 11px;
     margin-top: 9px;
+    margin-left: 110px;
   }
 }
 

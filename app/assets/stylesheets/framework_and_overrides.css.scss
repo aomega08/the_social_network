@@ -1,22 +1,6 @@
-@import "bootstrap";
-
-body {
-	font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
-  background-color: #e9eaed;
-}
-
 img {
 	@extend .img-responsive;
 	margin: 0 auto;
-}
-
-a:active {
-  outline: none;
-}
-
-#site-header .container {
-	max-width: 1010px;
-	min-width: 1010px;
 }
 
 .navbar-default {
