@@ -5,10 +5,12 @@
         = image_tag 'logo_squared.png', alt: 'The Social Network'
     %nav
       %ul.header-utilities
-        %li.header-hovering
-          = link_to current_user.name, '#'
-        %li.header-hovering
-          = link_to 'Home', home_url
+        %li
+          = link_to '#', class: 'header-hovering header-profile-link' do
+            = image_tag current_user.profile_image(:tiny)
+            = current_user.name
+        %li
+          = link_to 'Home', home_url, class: 'header-hovering'
         %li.header-menus
           %i.fa.fa-users
           %i.octicon.octicon-comment-discussion

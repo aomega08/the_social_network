@@ -16,6 +16,7 @@ gem 'thin'
 gem 'foreigner'
 
 gem 'bcrypt-ruby'
+gem 'paperclip', '~> 4.1'
 
 group :development do
   gem 'sqlite3'
