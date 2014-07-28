@@ -49,3 +49,13 @@ label.checkbox {
     *overflow: hidden;
   }
 }
+
+.inline-form {
+  display: inline;
+  margin: 0;
+  padding: 0;
+
+  & > div {
+    display: inline;
+  }
+}

@@ -10,37 +10,45 @@
       = image_tag @user.profile_image, alt: @user.full_name
     #profile-actions
       - if @user != current_user
-        .button.has-dropdown
-          - if current_user.has_friend? @user
+        - if current_user.has_friend? @user
+          .button.has-dropdown
             %i.fa.fa-check
             Friends
             %ul.dropdown-menu
               %li
-                Get Notifications
+                = link_to 'Get Notifications', '#'
               %li.separator
               %li
-                Close Friends
+                = link_to 'Close Friends', '#'
               %li
-                Acquaintances
+                = link_to 'Acquaintances', '#'
               %li
-                Add to another list
+                = link_to 'Add to another list', '#'
               %li.separator
               %li
-                Unfriend
-          - elsif current_user.has_friend_request? @user
+                = button_to friend_request_path(@user), method: :delete do
+                  Unfriend
+        - elsif current_user.has_friend_request? @user
+          .button.has-dropdown
             %i.fa.fa-plus
             Friend Request Sent
             %ul.dropdown-menu
               %li
-                Close Friends
+                = link_to 'Close Friends', '#'
               %li
-                Acquaintances
+                = link_to 'Acquaintances', '#'
               %li
-                Add to another list
+                = link_to 'Add to another list', '#'
               %li.separator
               %li
-                Cancel Request
-          - else
+                = button_to friend_request_path(@user), method: :delete do
+                  Cancel Request
+        - elsif current_user.has_received_friend_request? @user
+          = button_to friend_request_path(@user), class: 'button', form_class: 'inline-form' do
+            %i.fa.fa-plus
+            Accept Friend Request
+        - else
+          = button_to friend_request_path(@user), class: 'button', form_class: 'inline-form' do
             %i.fa.fa-plus
             Add Friend
 
@@ -55,18 +63,27 @@
           %ul.dropdown-menu.right-dropdown
             - if @user != current_user
               - if current_user.has_friend? @user
-                %li See Friendship
+                %li
+                  = link_to 'See Friendship', '#'
                 %li.separator
-                %li Poke
+                %li
+                  = link_to 'Poke', '#'
                 %li.separator
               - elsif current_user.has_friend_request? @user
-                %li Cancel Friend Request
-              %li Report
-              %li Block
+                %li
+                  = button_to friend_request_path(@user), method: :delete do
+                    Cancel Friend Request
+              %li
+                = link_to 'Report', '#'
+              %li
+                = link_to 'Block', '#'
             - else
-              %li View as...
-              %li Timeline Settings
-              %li Add a Badge to Your Site
+              %li
+                = link_to 'View as...', '#'
+              %li
+                = link_to 'Timeline Settings', '#'
+              %li
+                = link_to 'Add a Badge to Your Site', '#'
 
     #profile-links-container
       %ul#profile-links.clearfix

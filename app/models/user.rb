@@ -38,4 +38,8 @@ class User < ActiveRecord::Base
   def has_friend_request? user
     friendship_requests.where(target_id: user.id).count == 1
   end
+
+  def has_received_friend_request? user
+    FriendshipRequest.where(user_id: user.id, target_id: self.id).count == 1
+  end
 end

@@ -11,4 +11,11 @@ class Friendship < ActiveRecord::Base
       Friendship.create! user: friend2, friend: friend1
     end
   end
+
+  def self.delete_link(friend1, friend2)
+    transaction do
+      Friendship.where(user: friend1, friend: friend2).first.destroy
+      Friendship.where(user: friend2, friend: friend1).first.destroy
+    end
+  end
 end

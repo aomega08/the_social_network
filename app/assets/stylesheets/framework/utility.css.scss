@@ -64,6 +64,14 @@
       }
     }
 
+    button, input {
+      background: transparent;
+      border: none;
+      padding: 0 17px;
+      text-align: left;
+      width: 100%;
+    }
+
     a {
       display: block;
       padding: 0 17px;
