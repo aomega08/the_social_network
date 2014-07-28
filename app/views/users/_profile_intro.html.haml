@@ -8,6 +8,66 @@
   #profile-headline
     #profile-image
       = image_tag @user.profile_image, alt: @user.full_name
+    #profile-actions
+      - if @user != current_user
+        .button.has-dropdown
+          - if current_user.has_friend? @user
+            %i.fa.fa-check
+            Friends
+            %ul.dropdown-menu
+              %li
+                Get Notifications
+              %li.separator
+              %li
+                Close Friends
+              %li
+                Acquaintances
+              %li
+                Add to another list
+              %li.separator
+              %li
+                Unfriend
+          - elsif current_user.has_friend_request? @user
+            %i.fa.fa-plus
+            Friend Request Sent
+            %ul.dropdown-menu
+              %li
+                Close Friends
+              %li
+                Acquaintances
+              %li
+                Add to another list
+              %li.separator
+              %li
+                Cancel Request
+          - else
+            %i.fa.fa-plus
+            Add Friend
+
+      .button-group
+        - if @user != current_user and current_user.has_friend? @user
+          .button
+            Following
+        .button
+          Message
+        .button.has-dropdown
+          \...
+          %ul.dropdown-menu.right-dropdown
+            - if @user != current_user
+              - if current_user.has_friend? @user
+                %li See Friendship
+                %li.separator
+                %li Poke
+                %li.separator
+              - elsif current_user.has_friend_request? @user
+                %li Cancel Friend Request
+              %li Report
+              %li Block
+            - else
+              %li View as...
+              %li Timeline Settings
+              %li Add a Badge to Your Site
+
     #profile-links-container
       %ul#profile-links.clearfix
         - headline_link 'Timeline', profile_path(@user)

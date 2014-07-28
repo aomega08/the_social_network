@@ -1,3 +1,5 @@
+@import '../defines.css.scss';
+
 .alert {
   padding: 15px;
   margin-bottom: 20px;
@@ -23,6 +25,7 @@
   position: relative;
 
   .dropdown-menu {
+    margin: 0;
     list-style-type: none;
     position: absolute;
     left: -1px;
@@ -31,6 +34,13 @@
     padding: 6px 0;
     background-color: white;
     border: 1px solid #d3d6db;
+    border-radius: 0 0 3px 4px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+
+    &.right-dropdown {
+      right: -1px;
+      left: auto;
+    }
 
     & > li {
       line-height: 23px;
@@ -44,7 +54,13 @@
       &.separator {
         margin: 5px 7px 6px;
         padding-top: 1px;
-        border-bottom: 1px solid rgb(221, 221, 221);
+        border-top: 1px solid transparent !important;
+        border-bottom: 1px solid rgb(221, 221, 221) !important;
+
+        &:hover {
+          background: transparent !important;
+          border-top: 1px solid transparent !important;
+        }
       }
     }
 
@@ -60,5 +76,44 @@
 
   &:hover .dropdown-menu {
     display: block;
+    z-index: 100;
+  }
+}
+
+.button {
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-family: $helveticaStack;
+  font-weight: bold;
+
+  &.has-dropdown .dropdown-menu {
+    top: 100%;
+  }
+}
+
+.button-group {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+
+  & > .button {
+    margin-left: 0;
+    margin-right: 0;
+
+    border-radius: 0;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+
+    &:first-child {
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+      border-right: none;
+    }
   }
 }

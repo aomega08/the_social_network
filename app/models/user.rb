@@ -11,6 +11,9 @@ class User < ActiveRecord::Base
   }
 
   has_many :emails, class_name: 'UserEmail', dependent: :destroy
+  has_many :friendships
+  has_many :friends, through: :friendships, class_name: 'User'
+  has_many :friendship_requests
 
   validates_presence_of :name
   validates_presence_of :emails, message: 'User should have at least one email address.'
@@ -26,5 +29,13 @@ class User < ActiveRecord::Base
 
   def default_profile_image
     ActionController::Base.helpers.image_path("avatar.png")
+  end
+
+  def has_friend? user
+    friends.where(id: user.id).count == 1
+  end
+
+  def has_friend_request? user
+    friendship_requests.where(target_id: user.id).count == 1
   end
 end

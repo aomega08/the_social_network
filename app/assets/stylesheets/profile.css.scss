@@ -191,3 +191,42 @@
     color: #37404e;
   }
 }
+
+#profile-actions {
+  position: absolute;
+  bottom: 57px;
+  right: 15px;
+
+  .button {
+    background-color: white;
+    float: left;
+    font-size: 13px;
+    position: relative;
+    padding: 3px 10px;
+  }
+
+  & > .button, & > .button-group {
+    border-color: rgba(black, .35);
+    margin-left: 10px;
+  }
+
+  .button-group {
+    float: left;
+  }
+
+  .dropdown-menu li {
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+  }
+
+  .dropdown-menu li {
+    padding: 0 22px;
+
+    &:hover {
+      background: #6d84b4;
+      border-bottom: 1px solid $brandColor;
+      border-top: 1px solid $brandColor;
+      color: #fff;
+    }
+  }
+}
