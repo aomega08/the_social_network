@@ -125,3 +125,69 @@
     }
   }
 }
+
+#profile-content {
+  margin-top: 18px;
+}
+
+.pagelet-timeline {
+  background: white;
+  border: 1px solid rgb(211, 214, 219);
+  border-radius: 3px;
+
+  h3 {
+    background-color: rgb(246, 247, 248);
+    border-bottom: 1px solid rgb(211, 214, 219);
+    border-radius: 3px 3px 0 0;
+    padding: 16px 12px 12px;
+    font-family: $helveticaStack;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0 0 15px;
+
+    i {
+      float: left;
+      display: block;
+      margin-right: 9px;
+      color: #999;
+      font-size: 26px;
+      position: relative;
+      top: 2px;
+    }
+
+    a {
+      color: inherit;
+    }
+  }
+}
+
+.pagelet-inner {
+  padding: 0 15px 10px;
+}
+
+.pagelet-column {
+  width: 50%;
+  float: left;
+
+  &:first-child {
+    border-right: 1px solid #e5e5e5;
+  }
+
+  &:last-child {
+    border-left: 1px solid #e5e5e5;
+    position: relative;
+    left: -1px;
+  }
+}
+
+.pagelet-section {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 8px 15px 0;
+
+  h4 {
+    margin: 15px 10px;
+    font-size: 16px;
+    font-family: $helveticaStack;
+    color: #37404e;
+  }
+}

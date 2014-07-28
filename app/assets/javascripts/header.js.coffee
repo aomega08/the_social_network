@@ -1,4 +1,4 @@
-$ ->
+$(document).on 'page:change', ->
   $(document).on 'click', (event) ->
     unless $(event.target).closest('.click-menu').length
       toggle = $(this)

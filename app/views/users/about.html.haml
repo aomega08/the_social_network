@@ -1,3 +1,24 @@
 .container
   #profile-main
     = render 'profile_intro'
+
+    #profile-content
+      .pagelet-timeline
+        %h3
+          %i.fa.fa-user
+          = link_to 'About', profile_about_path(@user)
+        .pagelet-inner.clearfix
+          .pagelet-column
+            .pagelet-section#eduwork
+              %h4 Work and Education
+            .pagelet-section#relationship
+              %h4 Relationship
+            .pagelet-section#family
+              %h4 Family
+          .pagelet-column
+            .pagelet-section#eduwork
+              %h4 Places Lived
+            .pagelet-section#eduwork
+              %h4 Basic Information
+            .pagelet-section#eduwork
+              %h4 Contact Information
