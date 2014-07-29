@@ -1,0 +1,41 @@
+@import 'defines.css.scss';
+
+.timeline-content {
+  float: right;
+  margin-left: 15px;
+  width: 512px;
+}
+
+.timeline-sidebar {
+  float: left;
+  width: 323px;
+}
+
+.timeline-unit {
+  background: white;
+  border: 1px solid rgb(211, 214, 219);
+  border-radius: 3px;
+
+  header {
+    background-color: #f6f7f8;
+    padding: 10px 0 8px 12px;
+    border-bottom: 1px solid #e9eaed;
+  }
+}
+
+#new-post-wrap {
+  padding: 5px;
+}
+
+#new-post-textarea {
+  outline: none;
+  border: none;
+  background: transparent;
+  resize: none;
+  width: 100%;
+  min-height: 63px;
+  padding: 8px 7px 0;
+  font-size: 13px;
+  line-height: 18px;
+  font-family: $helveticaStack;
+}

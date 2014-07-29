@@ -52,12 +52,20 @@
             %i.fa.fa-plus
             Add Friend
 
+      - else
+        = button_to friend_request_path(@user), class: 'button', form_class: 'inline-form' do
+          Update Info
+
       .button-group
-        - if @user != current_user and current_user.has_friend? @user
+        - if @user != current_user
+          - if current_user.has_friend? @user
+            .button
+              Following
           .button
-            Following
-        .button
-          Message
+            Message
+        - else
+          .button
+            View Activity Log
         .button.has-dropdown
           \...
           %ul.dropdown-menu.right-dropdown
