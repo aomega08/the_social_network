@@ -11,7 +11,7 @@
     #profile-actions
       - if @user != current_user
         - if current_user.has_friend? @user
-          .button.has-dropdown
+          .btn.has-dropdown
             %i.fa.fa-check
             Friends
             %ul.dropdown-menu
@@ -29,7 +29,7 @@
                 = button_to friend_request_path(@user), method: :delete do
                   Unfriend
         - elsif current_user.has_friend_request? @user
-          .button.has-dropdown
+          .btn.btn-default.has-dropdown
             %i.fa.fa-plus
             Friend Request Sent
             %ul.dropdown-menu
@@ -53,20 +53,20 @@
             Add Friend
 
       - else
-        = button_to friend_request_path(@user), class: 'button', form_class: 'inline-form' do
+        = button_to friend_request_path(@user), class: 'btn btn-default', form_class: 'inline-form' do
           Update Info
 
-      .button-group
+      .btn-group.btn-group-inline
         - if @user != current_user
           - if current_user.has_friend? @user
-            .button
+            .btn.btn-default
               Following
-          .button
+          .btn.btn-default
             Message
         - else
-          .button
+          .btn.btn-default
             View Activity Log
-        .button.has-dropdown
+        .btn.btn-default.has-dropdown
           \...
           %ul.dropdown-menu.right-dropdown
             - if @user != current_user

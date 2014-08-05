@@ -6,7 +6,20 @@
       .clearfix
         .timeline-content
           .timeline-unit
-            %header
-            #new-post-wrap
-              %textarea#new-post-textarea
+            #timeline-new-post
+              %header
+              = form_for @post do |f|
+                = f.hidden_field :postable_type, value: 'Profile'
+                = f.hidden_field :postable_id, value: @user.profile.id
+                #new-post-wrap
+                  = f.text_area :content, id: 'new-post-textarea'
+                %footer.clearfix
+                  #post-actions
+                    .btn.btn-default.btn-small
+                      %i.fa.fa-users
+                      Friends
+                      %i.fa.fa-chevron-down
+                    = f.submit 'Post', class: 'btn btn-cta btn-small'
+
+          = render @user.profile.posts
         .timeline-sidebar

@@ -1,15 +1,23 @@
+@import '../defines.css.scss';
+
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 
+* {
+  box-sizing: border-box;
+}
+
 /**
- * 1. Set default font family to sans-serif.
+ * 1. Set default font family.
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
+ * 3. Set default font size to 100% for use with rem units-
  */
 
 html {
-  font-family: sans-serif; /* 1 */
+  font-family: $fontStack; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  font-size: 100%;
 }
 
 /**
@@ -202,16 +210,6 @@ figure {
 }
 
 /**
- * Address differences between Firefox and other browsers.
- */
-
-hr {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 0;
-}
-
-/**
  * Contain overflow in all browsers.
  */
 
@@ -324,13 +322,11 @@ input {
  * It's recommended that you don't attempt to style these elements.
  * Firefox's implementation doesn't respect box-sizing, padding, or width.
  *
- * 1. Address box sizing set to `content-box` in IE 8/9/10.
- * 2. Remove excess padding in IE 8/9/10.
+ * 1. Remove excess padding in IE 8/9/10.
  */
 
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box; /* 1 */
   padding: 0; /* 2 */
 }
 
@@ -347,15 +343,10 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /**
  * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
- * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
- *    (include `-moz` to future-proof).
  */
 
 input[type="search"] {
   -webkit-appearance: textfield; /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box; /* 2 */
-  box-sizing: content-box;
 }
 
 /**
@@ -391,10 +382,15 @@ legend {
 
 /**
  * Remove default vertical scrollbar in IE 8/9/10/11.
+ * Remove resize grip
+ * Remove border-radius and custom styling in ?
  */
 
 textarea {
   overflow: auto;
+  -webkit-appearance:none;
+  -webkit-border-radius:0;
+  resize: none;
 }
 
 /**

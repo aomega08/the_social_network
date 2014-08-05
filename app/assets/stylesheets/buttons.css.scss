@@ -1,0 +1,80 @@
+@import "defines.css.scss";
+
+.btn {
+  background: transparent;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  box-shadow: 0 1px 0 rgba(black, 0.1);
+  color: #4e5665;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 28px;
+  padding: 0 12px;
+  user-select: none;
+  text-align: center;
+  text-shadow: 0 1px 0 #fff;
+}
+
+.btn-default {
+  background: linear-gradient(to bottom, #ffffff 0%, #f6f7f8 100%);
+  border-color: #cdced0 #c5c6c8 #b6b7b9;
+
+  &:active {
+    background: linear-gradient(to bottom, #edeeef 0%, #f6f7f8 13%);
+  }
+}
+
+.btn-cta {
+  background: #4e69a2 linear-gradient(to bottom, #4e69a2 0%, #3c5a98 100%);
+  border-color: #435a8b #3c5488 #334c83;
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+
+  &:active {
+    background: linear-gradient(to bottom, #344e86 0%, #3b5998 50%);
+    box-shadow: 0 0 1px 2px #79a3f6;
+  }
+
+  &:hover {
+    background: linear-gradient(to bottom, lighten(#4e69a2, 3%) 0%, lighten(#3c5a98, 3%) 100%);
+    background-color: lighten(#4e69a2, 3%);
+  }
+}
+
+.btn-small {
+  line-height: 22px;
+}
+
+.btn-group {
+  @include clearfix;
+
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(black, 0.1);
+  display: inline-block;
+  vertical-align: middle;
+
+  & > .btn {
+    box-shadow: none;
+    float: left;
+
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0;
+    }
+
+    &:first-child:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &:last-child:not(:first-child) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  .btn+.btn, .btn+.btn-group, .btn-group+.btn, .btn-group+.btn-group {
+    margin-left: -1px;
+  }
+}

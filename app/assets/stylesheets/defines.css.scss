@@ -2,3 +2,16 @@ $mainBackground: #e9eaed;
 $brandColor: #3b5998;
 $fontStack: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
 $helveticaStack: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', Tahoma, Verdana, sans-serif;
+
+@mixin clearfix {
+  *zoom: 1;
+
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}

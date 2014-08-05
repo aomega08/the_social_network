@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   post 'profile/:id/friend', to: 'users#friend', as: :friend_request
   delete 'profile/:id/friend', to: 'users#unfriend'
 
+  resources :posts
+
   get ':object_id', to: 'site#object'
 end

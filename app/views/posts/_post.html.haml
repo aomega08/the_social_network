@@ -1,0 +1,17 @@
+.timeline-unit
+  %article.timeline-post
+    %header.clearfix
+      = link_to post.author.profile, class: 'post-header-img-link' do
+        = image_tag post.author.profile_image(:tiny), class: 'post-header-img'
+      %h5
+        - if post.postable_type == 'Profile' and post.author.profile == post.postable
+          = link_to post.author.full_name, post.author.profile
+        - else
+          = link_to post.author.full_name, post.author.profile
+          %i.fa.fa-caret-right.post-header-caret
+          = link_to post.postable.name, post.postable
+      = link_to post, class: 'post-time' do
+        %time{ datetime: l(post.created_at, format: :iso8601), title: l(post.created_at.in_time_zone(1), format: :human_full) }
+          = time_ago post.created_at, 1
+
+    = h(post.content).sub("\n", "<br/>").html_safe

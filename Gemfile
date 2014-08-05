@@ -8,7 +8,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem 'bootstrap-sass'
+gem "autoprefixer-rails"
 gem 'font-awesome-rails'
 gem 'haml-rails'
 gem 'high_voltage'

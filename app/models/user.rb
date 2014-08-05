@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   has_many :friendships
   has_many :friends, through: :friendships, class_name: 'User'
   has_many :friendship_requests
+  has_one :profile, foreign_key: 'id'
 
   validates_presence_of :name
   validates_presence_of :emails, message: 'User should have at least one email address.'
@@ -41,5 +42,14 @@ class User < ActiveRecord::Base
 
   def has_received_friend_request? user
     FriendshipRequest.where(user_id: user.id, target_id: self.id).count == 1
+  end
+
+  def profile
+    tmp = super
+    if tmp.nil?
+      return self.profile = Profile.create(id: id, user: self) 
+    end
+
+    return tmp
   end
 end
