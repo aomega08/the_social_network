@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140803211223) do
+ActiveRecord::Schema.define(version: 20140805123214) do
 
   create_table "friendship_requests", force: true do |t|
     t.integer  "user_id",    null: false
@@ -34,6 +34,14 @@ ActiveRecord::Schema.define(version: 20140803211223) do
   add_index "friendships", ["user_id", "friend_id"], name: "index_friendships_on_user_id_and_friend_id", unique: true
   add_index "friendships", ["user_id"], name: "index_friendships_on_user_id"
 
+  create_table "likes", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "likeable_id"
+    t.string   "likeable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "posts", force: true do |t|
     t.integer  "author_id"
     t.text     "content"
@@ -44,7 +52,6 @@ ActiveRecord::Schema.define(version: 20140803211223) do
   end
 
   create_table "profiles", force: true do |t|
-    t.integer "user_id"
   end
 
   create_table "user_emails", force: true do |t|

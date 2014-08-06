@@ -18,6 +18,11 @@ gem 'foreigner'
 gem 'bcrypt-ruby'
 gem 'paperclip', '~> 4.1'
 
+# Graph API
+gem 'rails-api'
+gem 'doorkeeper'
+gem 'graph', path: 'engines/graph'
+
 group :development do
   gem 'sqlite3'
   gem 'better_errors'

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  constraints subdomain: 'graph' do
+    mount Graph::Engine, at: '/'
+  end
+
   root to: 'visitors#index'
 
   get 'login', to: 'sessions#new'
@@ -15,6 +19,7 @@ Rails.application.routes.draw do
   delete 'profile/:id/friend', to: 'users#unfriend'
 
   resources :posts
+  resources :messages
 
   get ':object_id', to: 'site#object'
 end

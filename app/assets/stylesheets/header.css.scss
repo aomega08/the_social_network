@@ -96,14 +96,14 @@
 }
 
 #site-header.logged-in {
-	height: 47px;
+	height: 44px;
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
 	border-bottom: 1px solid #133783;
 	box-shadow: rgba(black, 0.521569) 0px 2px 2px -2px;
-	padding-top: 12px;
+	padding-top: 10px;
 
 	.navbar-brand {
 		margin-top: 0px;
@@ -148,7 +148,7 @@
 }
 
 .header-padding {
-	margin-bottom: 47px;
+	margin-bottom: 43px;
 }
 
 @media (max-width: 996px) {

@@ -14,4 +14,11 @@
         %time{ datetime: l(post.created_at, format: :iso8601), title: l(post.created_at.in_time_zone(1), format: :human_full) }
           = time_ago post.created_at, 1
 
-    = h(post.content).sub("\n", "<br/>").html_safe
+    .post-content
+      = h(post.content).sub("\n", "<br/>").html_safe
+
+    %footer.post-footer
+      %ul.post-actions-bar
+        %li= link_to 'Like', '#'
+        %li= link_to 'Comment', '#'
+        %li= link_to 'Share', '#'

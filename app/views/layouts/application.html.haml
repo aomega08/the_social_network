@@ -15,5 +15,6 @@
       %main{:role => "main"}
         = yield
 
-      %footer#site-footer
-        = render 'layouts/footer'
+      - if current_user.nil?
+        %footer#site-footer
+          = render 'layouts/footer'

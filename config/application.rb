@@ -33,5 +33,6 @@ module TheSocialNetwork
     # config.i18n.default_locale = :de
 
     config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
+    config.api_only = false
   end
 end
